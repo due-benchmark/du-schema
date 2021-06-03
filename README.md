@@ -28,13 +28,12 @@ To store information on the Documents content level for all DU datasets in the s
 
 JSON-LD is a well known Web standard for organization Linked Data (see this link: https://json-ld.org/ for more information).
 
-
 ## Json schema
 
 JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (see this link: https://json-schema.org/ for more information).
 
 ## Jsonlines 
 
-JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines. It's a great format for log files. It's also a flexible format for passing messages between cooperating processes (see this link: https://jsonlines.org/ for more information).
+JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines (see this link: https://jsonlines.org/ for more information).
 
 
