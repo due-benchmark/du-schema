@@ -1,10 +1,11 @@
 # Introduction
 
-The main aim of this project is to describe data format for storing information about datasets in Document Understanding domain. We decided to split our format into 3 parts:
+The main aim of this project is to describe data format for storing information about datasets in Document Understanding domain. We decided to describe each dataset with using three different files:
  1. Dataset level - for storing general information about dataset (like name or version)
  1. Documents annotation level - for storing annotations and additional document metadata (like external identifiers) 
  1. Documents content level - for storing outputs from different processing tools (e.g. output from tesseract OCR Engine)
 
+Our core assumption was to keep it simple and were possible used external format standards. Therefore, we decided to used JSON data format for describing single dataset/document.  
 
 # Data format details
 
