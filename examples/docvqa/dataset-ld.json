@@ -1,0 +1,29 @@
+{
+      "@context":"https://schema.org/",
+      "@type":"Dataset",
+      "name":"DocVQA",
+      "description":"The \"Document Visual Question Answering\" (DocVQA) challenge, focuses on a specific type of Visual Question Answering task, where visually understanding the information on a document image is necessary in order to provide an answer. This goes over and above passing a document image through OCR, and involves understanding all types of information conveyed by a document. Textual content (handwritten or typewritten), non-textual elements (marks, tick boxes, separators, diagrams), layout (page structure, forms, tables), and style (font, colours, highlighting), to mention just a few, are pieces of information that can be potentially necessary for responding to the question at hand.",
+      "url":"https://rrc.cvc.uab.es/?ch=17",
+      "identifier": ["https://arxiv.org/abs/2007.00398"],
+      "keywords":[
+         "Document Understanding",
+         "Document Visual Question Answering",
+         "Question Answering"
+      ],
+      "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+      "isAccessibleForFree" : true,
+      "hasPart" : [
+        {
+          "@type": "Dataset",
+          "name": "Train set"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Dev set"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Test set"
+        }
+      ]
+}

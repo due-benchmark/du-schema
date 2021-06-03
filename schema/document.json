@@ -1,0 +1,130 @@
+{
+  "$id": "http://json-schema.applica.ai/du/0.1.0/document.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "document",
+  "title": "Document",
+  "description": "Information about annotations for a single document.",
+  "type": "object",
+  "required": [
+    "name",
+    "language",
+    "annotations"
+  ],
+  "properties": {
+    "name": {
+      "description": "The document filename (without any extension) - a unique value in the dataset. In the scope of our dataset, the filename is our identifier.",
+      "type": "string"
+    },
+    "extension": {
+      "description": "The document file extension.",
+      "type": "string",
+      "default": "pdf"
+    },
+    "language": {
+      "description": "Language of the file (ISO 639-1 codes).",
+      "type": "string",
+      "default": "en",
+      "enum": [
+        "aa", "ab", "ae", "af", "ak", "am", "an", "ar", "as", "av", "ay", "az", "ba", "be", "bg", "bi",
+        "bm", "bn", "bo", "br", "bs", "ca", "ce", "ch", "co", "cr", "cs", "cu", "cv", "cy", "da", "de",
+        "dv", "dz", "ee", "el", "en", "eo", "es", "et", "eu", "fa", "ff", "fi", "fj", "fo", "fr", "fy",
+        "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi", "ho", "hr", "ht", "hu", "hy", "hz", "ia",
+        "id", "ie", "ig", "ii", "ik", "io", "is", "it", "iu", "ja", "jv", "ka", "kg", "ki", "kj", "kk",
+        "kl", "km", "kn", "ko", "kr", "ks", "ku", "kv", "kw", "ky", "la", "lb", "lg", "li", "ln", "lo",
+        "lt", "lu", "lv", "mg", "mh", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my", "na", "nb", "nd",
+        "ne", "ng", "nl", "nn", "no", "nr", "nv", "ny", "oc", "oj", "om", "or", "os", "pa", "pi", "pl",
+        "ps", "pt", "qu", "rm", "rn", "ro", "ru", "rw", "sa", "sc", "sd", "se", "sg", "sh", "si", "sk",
+        "sl", "sm", "sn", "so", "sq", "sr", "ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "ti",
+        "tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug", "uk", "ur", "uz", "ve", "vi", "vo",
+        "wa", "wo", "xh", "yi", "yo", "za", "zh", "zu"
+      ]
+    },
+    "annotations": {
+      "description": "List of all annotations.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/annotation"
+      }
+    },
+    "split": {
+      "description": "Split type, one of: train, dev, test.",
+      "type": "string",
+      "enum": [
+        "train",
+        "dev",
+        "test"
+      ]
+    },
+    "identifier": {
+      "description": "An identifier, such as an original document ID, URL, ISBN, DOI, or a Compact Identifier (the document can have more than one identifier).",
+      "type": "array"
+    },
+    "original_name": {
+      "description": "Filename in source/original dataset (we can modify original document names in case of duplicates).",
+      "type": "string"
+    },
+    "tags": {
+      "description": "List of all tags related to the document.",
+      "type": "array"
+    },
+    "metadata": {
+      "description": "Dictionary for storing any extra data related to the document.",
+      "type": "object"
+    }
+  },
+  "definitions": {
+    "annotation": {
+      "type": "object",
+      "required": [
+        "id",
+        "key",
+        "values"
+      ],
+      "properties": {
+        "id": {
+          "description": "Annotation dataset ID (unique for one dataset).",
+          "type": "string"
+        },
+        "key": {
+          "description": "Annotation key, eg. name of the entity for KIE task OR question for QA task.",
+          "type": "string"
+        },
+        "values": {
+          "description": "List of all annotation values for one key (it is possible to have more than one correct value), for most cases it will be a single element list.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "description": "Annotation value.",
+                "type": "string"
+              },
+              "value_variants": {
+                "description": "List of all possible value variants which are also correct, eg. [John Kennedy, Kennedy, John F. Kennedy] (should also contain `base value`).",
+                "type": "array"
+              },
+              "children": {
+                "description": "List of children Annotations - if we want to represent hierarchical structure.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/annotation"
+                }
+              }
+            }
+          }
+        },
+        "tags": {
+        "description": "List of all tags related to the annotation.",
+        "type": "array"
+        },
+        "metadata": {
+          "description": "Dictionary for storing any extra data related to the annotation.",
+          "type": "object"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+mypy-extensions==0.4.3
+
+jsonschema==2.6.0
+jsonlines==1.2.0

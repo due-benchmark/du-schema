@@ -1,0 +1,50 @@
+{
+   "$id": "http://json-schema.applica.ai/du/0.1.0/document_content.json",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "name": "document_content",
+   "title": "Document content",
+   "description": "Extracted content for document",
+   "type": "object",
+
+   "required": ["name", "contents"],
+   "properties": {
+      "name": {
+         "description": "The document filename (without any extension)",
+         "type": "string"
+      },
+      "contents": {
+         "type" : "array",
+         "items" : {
+           "type": "object",
+           "required": ["tool_name", "text"],
+           "properties": {
+             "tool_name": {
+               "description": "Name of the tool for extracting content from the document",
+               "type": "string",
+               "enum": ["ground_truth", "tesseract", "textract", "microsoft_cv", "google_vision", "pdfplumber","pdfminer", "pytesseract", "djvu", "other"]
+             },
+             "tool_version": {
+               "description": "Data extractor tool version, eg. OCR engine tool version",
+               "type": "string"
+             },
+             "tool_options": {
+               "description": "Data extractor tool options, eg. OCR engine tool options",
+               "type": "object"
+             },
+             "text": {
+               "description": "Text extracted from the document",
+               "type": "string"
+             },
+             "common_format": {
+               "description": "Common format extracted from the document",
+               "type": "string"
+             },
+             "hocr": {
+               "description": "Hocr extracted from the document",
+               "type": "string"
+             }
+           }
+         }
+       }
+   }
+}
