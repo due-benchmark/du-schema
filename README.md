@@ -17,11 +17,9 @@ To store information on the dataset level we are using JSON-LD format based on w
 
 To store information on the Documents annotation level for all DU datasets in the same manner we created data format (see `./schema/document.json` file) with using Json-schema standard. This help us to ensure that everything is well documented and properly validated. Additionally, for storing information about whole dataset we also decided to create single jsonl file for each split in the datasets. 
 
-
 ## Documents content level
 
 To store information on the Documents content level for all DU datasets in the same manner we created data format (see `./schema/document_content.json` file) with using Json-schema standard. This help us to ensure that everything is well documented and properly validated. Additionally, for storing information about whole dataset we also decided to create single jsonl file for each split in the datasets. 
-
 
 # Used external standards  
 
