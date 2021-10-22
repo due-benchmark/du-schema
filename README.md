@@ -11,7 +11,7 @@ Our core assumption was to keep it simple. Therefore, we decided to use JSON dat
 
 ## Dataset level 
 
-To store information on the dataset level we are using JSON-LD format. It is based on well known schema.org Web standard (see https://developers.google.com/search/docs/data-types/dataset for more information). 
+To store information on the dataset level we are using JSON-LD format. It is based on well known schema.org Web standard (see [this link](https://developers.google.com/search/docs/data-types/dataset) for more information). 
 
 ## Documents annotation level 
 
@@ -27,14 +27,14 @@ We also decided to create a single jsonl file for each split in the dataset.
 
 ## JSON-LD
 
-JSON-LD is a well-known Web standard for organization Linked Data (see this link: https://json-ld.org/ for more information).
+JSON-LD is a well-known Web standard for organization Linked Data (see [this link](https://json-ld.org/) for more information).
 
 ## JSON Schema
 
-JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (see this link: https://json-schema.org/ for more information).
+JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (see [this link](https://json-schema.org/) for more information).
 
 ## JSON Lines 
 
-JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with Unix-like text processing tools and shell pipelines (see this link: https://jsonlines.org/ for more information).
+JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with Unix-like text processing tools and shell pipelines (see [this link](https://jsonlines.org/) for more information).
 
 
