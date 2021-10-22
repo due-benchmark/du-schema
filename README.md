@@ -37,4 +37,5 @@ JSON Schema is a vocabulary that allows you to annotate and validate JSON docume
 
 JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with Unix-like text processing tools and shell pipelines (see [this link](https://jsonlines.org/) for more information).
 
-
+# Examples
+Please refer to `examples` directory to see fragments of AxCell and DocVQA datasets defined according to the format. 
