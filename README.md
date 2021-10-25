@@ -1,7 +1,7 @@
 # Introduction
 
 The main aim of this project is to describe the data format dedicated to storing information about datasets in the Document Understanding domain. Each dataset is defined on three different levels:
- 1. Dataset level - storing general information about the dataset (eg. name or version)
+ 1. Dataset level - storing general information about the dataset (e.g. name or version)
  2. Documents annotation level - storing annotations and additional document metadata (like external identifiers) 
  3. Documents content level - storing outputs from different processing tools (e.g. output from tesseract OCR Engine)
 
