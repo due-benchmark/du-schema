@@ -1,0 +1,34 @@
+{
+      "@context":"https://schema.org/",
+      "@type":"Dataset",
+      "name":"PWC v2",
+      "description": "The task of paper results extraction is to take a machine learning paper as an input and ex-tract results contained within the paper, specifically tuples of the form (task, dataset, metric name, metric value). PWC v2 was based on the two dataset which was published on following site: https://github.com/paperswithcode/axcell ",
+      "url": "https://github.com/paperswithcode/axcell",
+      "citation": "https://arxiv.org/abs/2004.14356",
+      "identifier": ["https://github.com/paperswithcode/axcell"],
+      "keywords":[
+         "Document Understanding",
+         "Key Information Extraction"
+      ],
+      "license" : {
+        "@type": "CreativeWork",
+        "name": "Apache License 2.0",
+        "url": "https://github.com/paperswithcode/axcell/blob/master/LICENSE"
+      },
+      "isAccessibleForFree" : true,
+      "hasPart" : [
+        {
+          "@type": "Dataset",
+          "name": "Train set"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Dev set"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Test set"
+        }
+      ],
+      "version" : "2.0"
+}
