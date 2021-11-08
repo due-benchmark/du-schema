@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "common_format": {
+      "type": "object",
+      "properties": {
+        "doc_id": {
+          "description": "Document identifier (for example document name).",
+          "type": "string"
+        },
+        "tokens": {
+          "description": "List of tokens created from document's text.",
+          "type": "array"
+        },
+        "positions": {
+          "description": "List of tokens' positions. I-th element of the list indicates position of i-th token from tokens array.",
+          "type": "array"
+        },
+        "scores": {
+          "description": "List of scores, where i-th element of the list indicates score of i-th token from tokens array.",
+          "type": "array"
+        },
+        "structures": {
+          "description": "Information about pages and lines.",
+          "type": "object",
+          "properties": {
+            "pages": {
+              "description": "Information about pages.",
+              "type": "object",
+              "properties": {
+                "version": {
+                  "description": "",
+                  "type": "string"
+                },
+                "structure_value": {
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "minContains": 2,
+                      "maxContains": 2
+                    }
+                  }
+                },
+                "positions": {
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "minContains": 2,
+                      "maxContains": 2
+                    }
+                  }
+                }
+              }
+            },
+            "lines": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "version": {
+                  "description": "",
+                  "type": "string"
+                },
+                "structure_value": {
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "minContains": 2,
+                      "maxContains": 2
+                    }
+                  }
+                },
+                "positions": {
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "minContains": 2,
+                      "maxContains": 2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
