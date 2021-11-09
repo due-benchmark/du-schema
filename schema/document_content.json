@@ -55,7 +55,7 @@
             "$ref": "common_format.json#/definitions/common_format"
           },
           "hocr": {
-            "description": "Hocr extracted from the document",
+            "description": "HOCR extracted from the document",
             "type": "string"
           }
         }

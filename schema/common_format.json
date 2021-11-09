@@ -14,15 +14,15 @@
           "type": "array"
         },
         "positions": {
-          "description": "List of tokens' positions. I-th element of the list indicates position of i-th token from tokens array.",
+          "description": "List of tokens' positions represented by bounding boxes. The i-th element of the list indicates the position of i-th token from the tokens array. Each position consists of four elements: [x1, y1, x2, y2], where x1 and x2 indicate the start and the end of a bounding box in the vertical dimension, whereas y1 and y2 indicate the start and the end of a bounding box in the horizontal dimension.",
           "type": "array"
         },
         "scores": {
-          "description": "List of scores, where i-th element of the list indicates score of i-th token from tokens array.",
+          "description": "List of OCR confidency scores, where i-th element of the list indicates the score of i-th token from tokens array, in other words, it shows confidence of the OCR engine that i-th element is equal to the i-th token.",
           "type": "array"
         },
         "structures": {
-          "description": "Information about pages and lines.",
+          "description": "Information about pages and lines of text.",
           "type": "object",
           "properties": {
             "pages": {
@@ -30,11 +30,11 @@
               "type": "object",
               "properties": {
                 "version": {
-                  "description": "",
+                  "description": "Version of pages values.",
                   "type": "string"
                 },
                 "structure_value": {
-                  "description": "",
+                  "description": "Positions of tokens assigned to pages. The I-th list consists of a two-element array indicating ids of the first and the last token on i-th page. For example, structure_value [[0,150], [150, 300]] means that the first page consists of tokens from 0 to 149 from the tokens array and the second page consists of tokens from 150 to 299.",
                   "type": "array",
                   "items": {
                     "type": "array",
@@ -46,29 +46,29 @@
                   }
                 },
                 "positions": {
-                  "description": "",
+                  "description": "List of bounding boxes for whole pages, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
                   "type": "array",
                   "items": {
                     "type": "array",
                     "items": {
                       "type": "number",
-                      "minContains": 2,
-                      "maxContains": 2
+                      "minContains": 4,
+                      "maxContains": 4
                     }
                   }
                 }
               }
             },
             "lines": {
-              "description": "",
+              "description": "Information about lines of text.",
               "type": "object",
               "properties": {
                 "version": {
-                  "description": "",
+                  "description": "Version of lines values.",
                   "type": "string"
                 },
                 "structure_value": {
-                  "description": "",
+                  "description": "Positions of tokens assigned to lines of text. The i-th list consists of a two-element array indicating ids of the first and the last token in i-th line, by analogy with pages structure_values, [[0,10], [10, 15]] means that the first line consists of tokens from 0 to 9 from the tokens array and the second line consists of tokens from 10 to 15.",
                   "type": "array",
                   "items": {
                     "type": "array",
@@ -80,14 +80,14 @@
                   }
                 },
                 "positions": {
-                  "description": "",
+                  "description": "List of bounding boxes covering whole lines, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
                   "type": "array",
                   "items": {
                     "type": "array",
                     "items": {
                       "type": "number",
-                      "minContains": 2,
-                      "maxContains": 2
+                      "minContains": 4,
+                      "maxContains": 4
                     }
                   }
                 }
