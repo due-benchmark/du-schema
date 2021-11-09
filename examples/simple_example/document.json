@@ -1,0 +1,30 @@
+{
+  "name": "document_1",
+  "language": "en",
+  "annotations": [
+    {
+      "id": "0",
+      "key": "date",
+      "values": [
+        {
+          "value": "12.01.2021",
+          "value_variants": [
+            "january 12th 2021",
+            "january 12 2021",
+            "12.01.2021"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "key": "city",
+      "values": [
+        {
+          "value": "Kingston"
+        }
+      ]
+    }
+  ],
+  "split": "train"
+}
