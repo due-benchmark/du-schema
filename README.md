@@ -41,7 +41,7 @@ JSON Lines is a convenient format for storing structured data that may be proces
 
 The aim of the `documents_content` schema is to store outputs from external tools. 
 We decided to create a format - _common format_ - for storing information about documents' contents.
-The main advantage of a common format, compared to hOCR, is using less disc space. 
+The main advantage of a common format, compared to hOCR, is easier parsing and the use of less disk space. 
 
 Information that is stored in the common format is a list of tokens created from the document's text, 
 positions of those tokens represented by bounding boxes, and confidence scores of the OCR engine. What
