@@ -29,10 +29,6 @@
               "description": "Information about pages.",
               "type": "object",
               "properties": {
-                "version": {
-                  "description": "Version of pages values.",
-                  "type": "string"
-                },
                 "structure_value": {
                   "description": "Positions of tokens assigned to pages. The I-th list consists of a two-element array indicating ids of the first and the last token on i-th page. For example, structure_value [[0,150], [150, 300]] means that the first page consists of tokens from 0 to 149 from the tokens array and the second page consists of tokens from 150 to 299.",
                   "type": "array",
@@ -63,10 +59,6 @@
               "description": "Information about lines of text.",
               "type": "object",
               "properties": {
-                "version": {
-                  "description": "Version of lines values.",
-                  "type": "string"
-                },
                 "structure_value": {
                   "description": "Positions of tokens assigned to lines of text. The i-th list consists of a two-element array indicating ids of the first and the last token in i-th line, by analogy with pages structure_values, [[0,10], [10, 15]] means that the first line consists of tokens from 0 to 9 from the tokens array and the second line consists of tokens from 10 to 15.",
                   "type": "array",
