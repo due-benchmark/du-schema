@@ -30,7 +30,7 @@
               "type": "object",
               "properties": {
                 "structure_value": {
-                  "description": "Positions of tokens assigned to pages. The I-th list consists of a two-element array indicating ids of the first and the last token on i-th page. For example, structure_value [[0,150], [150, 300]] means that the first page consists of tokens from 0 to 149 from the tokens array and the second page consists of tokens from 150 to 299.",
+                  "description": "Positions of tokens assigned to pages. The i-th list consists of a two-element array indicating ids of the first and the last token on i-th page. For example, structure_value [[0,150], [150, 300]] means that the first page consists of tokens from 0 to 149 from the tokens array and the second page consists of tokens from 150 to 299.",
                   "type": "array",
                   "items": {
                     "type": "array",
