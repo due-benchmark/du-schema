@@ -40,16 +40,14 @@ JSON Lines is a convenient format for storing structured data that may be proces
 ## Tokens layer
 
 The aim of the `documents_content` schema is to store outputs from external tools. 
-Under the _tokens_layer_ property we store infotmation about tokens extracted from the document.
+Under the _tokens_layer_ property we store information about tokens extracted from the document.
 
 The data that is stored in the _tokens_layer_ is a list of tokens created from the document's text, 
 positions of those tokens represented by bounding boxes, and, optionally, confidence scores of the OCR engine. 
-What is more, it also stores information about pages of a document and lines 
-of text. 
+What is more, it also stores information about pages of a document and lines of text. 
 Each token is mapped to a line of text and document page where it appears. 
 For each line and each page, a list of token identifiers is created. 
-We also store information about bounding boxes for each page and each line 
-of text. 
+We also store information about bounding boxes for each page and each line of text. 
 For more details please refer to descriptions in `schema/tokens_layer.json`.
 
 The main advantage of using _tokens_layer_, compared to hOCR, is easier parsing and the use of less disk space. 
