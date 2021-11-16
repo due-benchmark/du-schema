@@ -37,18 +37,22 @@ JSON Schema is a vocabulary that allows you to annotate and validate JSON docume
 
 JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with Unix-like text processing tools and shell pipelines (see [this link](https://jsonlines.org/) for more information).
 
-## Common format
+## Tokens layer
 
 The aim of the `documents_content` schema is to store outputs from external tools. 
-We decided to create a format - _common format_ - for storing information about documents' contents.
-The main advantage of a common format, compared to hOCR, is easier parsing and the use of less disk space. 
+Under the _tokens_layer_ property we store infotmation about tokens extracted from the document.
 
-Information that is stored in the common format is a list of tokens created from the document's text, 
-positions of those tokens represented by bounding boxes, and confidence scores of the OCR engine. What
-is more, it stores also information about pages of a document and lines of text. For both, 
-a list of token identifiers is stored, so that tokens are mapped to pages and lines. Also,
-it contains information about bounding boxes for each page and each line of text. 
-For more details please refer to descriptions in `schema/common_format.json`.
+The data that is stored in the _tokens_layer_ is a list of tokens created from the document's text, 
+positions of those tokens represented by bounding boxes, and, optionally, confidence scores of the OCR engine. 
+What is more, it also stores information about pages of a document and lines 
+of text. 
+Each token is mapped to a line of text and document page where it appears. 
+For each line and each page, a list of token identifiers is created. 
+We also store information about bounding boxes for each page and each line 
+of text. 
+For more details please refer to descriptions in `schema/tokens_layer.json`.
+
+The main advantage of using _tokens_layer_, compared to hOCR, is easier parsing and the use of less disk space. 
 
 # Examples
 Please refer to `examples` directory to see fragments of AxCell and DocVQA datasets defined according to the format. 

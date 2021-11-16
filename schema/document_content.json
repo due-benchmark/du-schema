@@ -51,8 +51,8 @@
             "description": "Text extracted from the document",
             "type": "string"
           },
-          "common_format": {
-            "$ref": "common_format.json#/definitions/common_format"
+          "tokens_layer": {
+            "$ref": "tokens_layer.json#/definitions/tokens_layer"
           },
           "hocr": {
             "description": "HOCR extracted from the document",
