@@ -1,5 +1,5 @@
 {
-  "$id": "http://json-schema.applica.ai/du/0.1.0/document_content.json",
+  "$id": "https://raw.githubusercontent.com/due-benchmark/du-schema/master/schema/document_content.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "name": "document_content",
   "title": "Document content",
@@ -51,103 +51,11 @@
             "description": "Text extracted from the document",
             "type": "string"
           },
-          "common_format": {
-            "type": "object",
-            "properties": {
-              "doc_id": {
-                "description": "Document identifier (for example document name).",
-                "type": "string"
-              },
-              "tokens": {
-                "description": "List of tokens created from document's text.",
-                "type": "array"
-              },
-              "positions": {
-                "description": "List of tokens' positions. I-th element of the list indicates position of i-th token from tokens array.",
-                "type": "array"
-              },
-              "scores": {
-                "description": "List of scores, where i-th element of the list indicates score of i-th token from tokens array.",
-                "type": "array"
-              },
-              "structures": {
-                "description": "",
-                "type": "object",
-                "properties": {
-                  "pages": {
-                    "description": "",
-                    "type": "object",
-                    "properties": {
-                      "version": {
-                        "description": "",
-                        "type": "string"
-                      },
-                      "structure_value": {
-                        "description": "",
-                        "type": "array",
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "number",
-                            "minContains": 2,
-                            "maxContains": 2
-                          }
-                        }
-                      },
-                      "positions": {
-                        "description": "",
-                        "type": "array",
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "number",
-                            "minContains": 2,
-                            "maxContains": 2
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "lines": {
-                    "description": "",
-                    "type": "object",
-                    "properties": {
-                      "version": {
-                        "description": "",
-                        "type": "string"
-                      },
-                      "structure_value": {
-                        "description": "",
-                        "type": "array",
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "number",
-                            "minContains": 2,
-                            "maxContains": 2
-                          }
-                        }
-                      },
-                      "positions": {
-                        "description": "",
-                        "type": "array",
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "number",
-                            "minContains": 2,
-                            "maxContains": 2
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          "tokens_layer": {
+            "$ref": "tokens_layer.json#/definitions/tokens_layer"
           },
           "hocr": {
-            "description": "Hocr extracted from the document",
+            "description": "HOCR extracted from the document",
             "type": "string"
           }
         }
