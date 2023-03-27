@@ -45,12 +45,7 @@
                   "description": "List of bounding boxes for whole pages, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
                   "type": "array",
                   "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "number",
-                      "minContains": 4,
-                      "maxContains": 4
-                    }
+                    "$ref": "#/definitions/bounding_box"
                   }
                 }
               }
@@ -72,21 +67,25 @@
                   }
                 },
                 "positions": {
-                  "description": "List of bounding boxes covering whole lines, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
+                  "description": "List of bounding boxes covering whole lines.",
                   "type": "array",
                   "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "number",
-                      "minContains": 4,
-                      "maxContains": 4
-                    }
+                    "$ref": "#/definitions/bounding_box"
                   }
                 }
               }
             }
           }
         }
+      }
+    },
+    "bounding_box": {
+      "description": "Bounding box which indicates the start and end of areas in horizontal and vertical dimensions. First and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minContains": 4,
+        "maxContains": 4
       }
     }
   }

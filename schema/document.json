@@ -106,6 +106,24 @@
                 "description": "List of all possible value variants which are also correct, eg. [John Kennedy, Kennedy, John F. Kennedy] (should also contain `base value`).",
                 "type": "array"
               },
+              "evidence": {
+                "description": "List of evidences for truthfulness of the value. May contain page index and bounding box indicating fragment of the page.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "page": {
+                      "type": "integer"
+                    },
+                    "bounding_box": {
+                      "$ref": "tokens_layer.json#/definitions/bounding_box"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ]
+                }
+              },
               "children": {
                 "description": "List of children Annotations - if we want to represent hierarchical structure.",
                 "type": "array",
