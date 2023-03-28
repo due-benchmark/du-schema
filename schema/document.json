@@ -107,7 +107,7 @@
                 "type": "array"
               },
               "evidence": {
-                "description": "List of evidences for truthfulness of the value. May contain page index and bounding box indicating fragment of the page.",
+                "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
                 "type": "array",
                 "items": {
                   "type": "object",
