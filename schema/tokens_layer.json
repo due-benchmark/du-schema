@@ -14,8 +14,11 @@
           "type": "array"
         },
         "positions": {
-          "description": "List of tokens' positions represented by bounding boxes. The i-th element of the list indicates the position of i-th token from the tokens array. Each position consists of four elements: [x1, y1, x2, y2], where x1 and x2 indicate the start and the end of a bounding box in the vertical dimension, whereas y1 and y2 indicate the start and the end of a bounding box in the horizontal dimension.",
-          "type": "array"
+          "description": "List of tokens' positions represented by bounding boxes. The i-th element of the list indicates the position of i-th token from the tokens array.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bounding_box"
+          }
         },
         "scores": {
           "description": "List of OCR confidency scores, where i-th element of the list indicates the score of i-th token from tokens array, in other words, it shows confidence of the OCR engine that i-th element is equal to the i-th token.",
@@ -42,15 +45,10 @@
                   }
                 },
                 "positions": {
-                  "description": "List of bounding boxes for whole pages, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
+                  "description": "List of bounding boxes covering whole pages.",
                   "type": "array",
                   "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "number",
-                      "minContains": 4,
-                      "maxContains": 4
-                    }
+                    "$ref": "#/definitions/bounding_box"
                   }
                 }
               }
@@ -72,21 +70,25 @@
                   }
                 },
                 "positions": {
-                  "description": "List of bounding boxes covering whole lines, first and third elements indicate the start and the end of a bounding box in the vertical dimension, whereas second and fourth elements describe start and end of a horizontal dimension.",
+                  "description": "List of bounding boxes covering whole lines.",
                   "type": "array",
                   "items": {
-                    "type": "array",
-                    "items": {
-                      "type": "number",
-                      "minContains": 4,
-                      "maxContains": 4
-                    }
+                    "$ref": "#/definitions/bounding_box"
                   }
                 }
               }
             }
           }
         }
+      }
+    },
+    "bounding_box": {
+      "description": "Bounding box which indicates the start and end of areas in horizontal and vertical dimensions. Each bounding box consists of four elements: [x1, y1, x2, y2], where x1 and x2 indicate the start and the end of a bounding box in the vertical dimension, whereas y1 and y2 indicate the start and the end of a bounding box in the horizontal dimension.",
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minContains": 4,
+        "maxContains": 4
       }
     }
   }
