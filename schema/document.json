@@ -89,6 +89,24 @@
           "description": "Annotation key, eg. name of the entity for KIE task OR question for QA task.",
           "type": "string"
         },
+        "evidence": {
+          "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "integer"
+              },
+              "bounding_box": {
+                "$ref": "tokens_layer.json#/definitions/bounding_box"
+              }
+            },
+            "required": [
+              "page"
+            ]
+          }
+        },
         "values": {
           "description": "List of all annotation values for one key (it is possible to have more than one correct value), for most cases it will be a single element list.",
           "type": "array",
@@ -105,24 +123,6 @@
               "value_variants": {
                 "description": "List of all possible value variants which are also correct, eg. [John Kennedy, Kennedy, John F. Kennedy] (should also contain `base value`).",
                 "type": "array"
-              },
-              "evidence": {
-                "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "page": {
-                      "type": "integer"
-                    },
-                    "bounding_box": {
-                      "$ref": "tokens_layer.json#/definitions/bounding_box"
-                    }
-                  },
-                  "required": [
-                    "page"
-                  ]
-                }
               },
               "children": {
                 "description": "List of children Annotations - if we want to represent hierarchical structure.",
