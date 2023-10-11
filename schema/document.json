@@ -89,6 +89,10 @@
           "description": "Annotation key, eg. name of the entity for KIE task OR question for QA task.",
           "type": "string"
         },
+        "alternative_keys": {
+          "description": "Alternative key names, such as questions.",
+          "type": "array"
+        },
         "evidence": {
           "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
           "type": "array",
