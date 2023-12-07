@@ -122,7 +122,7 @@
             "properties": {
               "value": {
                 "description": "Annotation value.",
-                "type": "string"
+                "type": ["string", "null"]
               },
               "value_variants": {
                 "description": "List of all possible value variants which are also correct, eg. [John Kennedy, Kennedy, John F. Kennedy] (should also contain `base value`).",
