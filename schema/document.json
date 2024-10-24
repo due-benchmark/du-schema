@@ -73,6 +73,54 @@
     }
   },
   "definitions": {
+    "bounding_box_in_pixels": {
+      "description": "Bounding box in the format [x_min, y_min, x_max, y_max]. Where x, y are pixel coordinates.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "evidence": {
+      "description": "Evidence for the assigned value within the document. It contains information about the bounding boxes for the evidence.",
+      "type": "object",
+      "properties": {
+        "positions": {
+          "description": "List of bounding boxes covering the evidence.",
+          "type": "array",
+          "items": {
+            "$ref": "tokens_layer.json#/definitions/bounding_box"
+          }
+        },
+        "pages": {
+          "description": "List of pages where bounding boxes are located. The i-th element of the list indicates the page of i-th bounding box.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "group_item_ids": {
+          "description": "List of group item IDs for bounding boxes. The i-th element of the list indicates the group time ID of i-th bounding box.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "positions_in_pixels": {
+          "description": "Option list of bounding boxes covering the evidence in pixels.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bounding_box_in_pixels"
+          }
+        }
+      },
+      "required": [
+        "positions",
+        "pages",
+        "group_item_ids"
+      ]
+    },
     "annotation": {
       "type": "object",
       "required": [
@@ -94,21 +142,13 @@
           "type": "array"
         },
         "evidence": {
-          "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
+          "$ref": "#/definitions/evidence"
+        },
+        "alternative_evidences": {
+          "description": "Alternative evidences for the assigned value within the document.",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "page": {
-                "type": "integer"
-              },
-              "bounding_box": {
-                "$ref": "tokens_layer.json#/definitions/bounding_box"
-              }
-            },
-            "required": [
-              "page"
-            ]
+            "$ref": "#/definitions/evidence"
           }
         },
         "values": {
