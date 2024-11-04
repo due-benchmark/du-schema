@@ -73,15 +73,6 @@
     }
   },
   "definitions": {
-    "bounding_box_in_pixels": {
-      "description": "Bounding box in the format [x_min, y_min, x_max, y_max]. Where x, y are pixel coordinates.",
-      "type": "array",
-      "items": {
-        "type": "integer",
-        "minItems": 4,
-        "maxItems": 4
-      }
-    },
     "evidence": {
       "description": "Evidence for the assigned value within the document. It contains information about the bounding boxes for the evidence.",
       "type": "object",
@@ -105,13 +96,6 @@
           "type": "array",
           "items": {
             "type": "integer"
-          }
-        },
-        "positions_in_pixels": {
-          "description": "Option list of bounding boxes covering the evidence in pixels.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/bounding_box_in_pixels"
           }
         }
       },
