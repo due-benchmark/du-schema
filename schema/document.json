@@ -100,9 +100,7 @@
         }
       },
       "required": [
-        "positions",
-        "pages",
-        "group_item_ids"
+        "pages"
       ]
     },
     "annotation": {
