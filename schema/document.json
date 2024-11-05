@@ -73,6 +73,36 @@
     }
   },
   "definitions": {
+    "evidence": {
+      "description": "Evidence for the assigned value within the document. It contains information about the bounding boxes for the evidence.",
+      "type": "object",
+      "properties": {
+        "positions": {
+          "description": "List of bounding boxes covering the evidence.",
+          "type": "array",
+          "items": {
+            "$ref": "tokens_layer.json#/definitions/bounding_box"
+          }
+        },
+        "pages": {
+          "description": "List of pages where bounding boxes are located. The i-th element of the list indicates the page of i-th bounding box.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "group_item_ids": {
+          "description": "List of group item IDs for bounding boxes. The i-th element of the list indicates the group time ID of i-th bounding box.",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "required": [
+        "pages"
+      ]
+    },
     "annotation": {
       "type": "object",
       "required": [
@@ -94,21 +124,13 @@
           "type": "array"
         },
         "evidence": {
-          "description": "List of evidence for the assigned value within the document. It may contain a page index and bounding box indicating fragment of the page.",
+          "$ref": "#/definitions/evidence"
+        },
+        "alternative_evidences": {
+          "description": "Alternative evidences for the assigned value within the document.",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "page": {
-                "type": "integer"
-              },
-              "bounding_box": {
-                "$ref": "tokens_layer.json#/definitions/bounding_box"
-              }
-            },
-            "required": [
-              "page"
-            ]
+            "$ref": "#/definitions/evidence"
           }
         },
         "values": {
